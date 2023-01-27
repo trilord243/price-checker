@@ -3,18 +3,19 @@ import axios from "axios";
 
 function ProductDetail({ value }) {
   const [product, setProduct] = useState({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
       .get(`https://app.elplazas.com/api/v1/product/detail/${value}`)
       .then((response) => setProduct(response.data))
-      .catch((error) => console.error(error));
+      .catch((error) => setLoading(false));
   }, [value]);
 
   return (
     <div>
-      <h1>{product.item_desc}</h1>
-      <p>{product.price}$</p>
+      <h1>{loading ? product.item_desc : "Producto no encontrado "}</h1>
+      <h1>{loading ? product.price + "$" : "Producto no encontrado"}</h1>
     </div>
   );
 }

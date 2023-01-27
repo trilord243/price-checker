@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { MyContext } from "../App";
-
+import "./Hompage.css";
+import logo from "./Logoplaza.png";
 function Homepage() {
   const { value, setValue } = useContext(MyContext);
 
@@ -17,15 +18,29 @@ function Homepage() {
   console.log(value);
 
   return (
-    <>
-      <h1> Bienvendio al plaza consulta Precio </h1>
-      <form onSubmit={handleSubmit}>
-        <input type="text" onChange={handleChange} value={value} />
-        <Link to="/Consult">
-          <button type="submit">Submit </button>
-        </Link>
+    <div className="container">
+      <div className="logo">
+        <img src={logo} alt="iamge" />
+      </div>
+
+      <form onSubmit={handleSubmit} className="search-form">
+        <h1>Verifique su precio</h1>
+        <div className="center">
+          <input
+            type="text"
+            onChange={handleChange}
+            value={value}
+            className="center"
+            placeholder="Ingrese el nombre del producto"
+          />
+        </div>
+        <div className="center">
+          <Link to="/Consult">
+            <button type="submit">Submit</button>
+          </Link>
+        </div>
       </form>
-    </>
+    </div>
   );
 }
 
