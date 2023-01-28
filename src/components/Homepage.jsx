@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { MyContext } from "../App";
 import "./Hompage.css";
 import logo from "./Logoplaza.png";
+import Footer from "./Footer";
 function Homepage() {
   const { value, setValue } = useContext(MyContext);
 
@@ -18,29 +19,35 @@ function Homepage() {
   console.log(value);
 
   return (
-    <div className="container">
-      <div className="logo">
-        <img src={logo} alt="iamge" />
+    <>
+      <div className="form-f">
+        <form onSubmit={handleSubmit} className="search-form">
+          <div className="center">
+            <input
+              type="text"
+              onChange={handleChange}
+              value={value}
+              className="center"
+              placeholder=""
+            />
+          </div>
+          <div className="center">
+            <Link to="/Consult">
+              <button type="submit">Submit</button>
+            </Link>
+          </div>
+        </form>
       </div>
 
-      <form onSubmit={handleSubmit} className="search-form">
-        <h1>Verifique su precio</h1>
-        <div className="center">
-          <input
-            type="text"
-            onChange={handleChange}
-            value={value}
-            className="center"
-            placeholder="Ingrese el nombre del producto"
-          />
+      <div className="container bg-container">
+        <div className="logo">
+          <img src={logo} alt="iamge" />
         </div>
-        <div className="center">
-          <Link to="/Consult">
-            <button type="submit">Submit</button>
-          </Link>
-        </div>
-      </form>
-    </div>
+      </div>
+      <div className="footer">
+        <Footer />
+      </div>
+    </>
   );
 }
 
