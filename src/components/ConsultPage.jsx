@@ -9,6 +9,7 @@ function ConsultPage() {
   useEffect(() => {
     setTimeout(() => {
       navigate("/");
+      setValue("");
     }, 5000);
   }, []);
 

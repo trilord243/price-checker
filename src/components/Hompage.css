@@ -33,6 +33,7 @@
 
 body {
   animation: changeBg 20s infinite;
+  overflow: hidden;
 }
 
 .container {
@@ -136,9 +137,9 @@ button {
 .footer {
   background-color: #0a532a;
   height: 100px;
-  width: 102%;
+  width: 107%;
   position: absolute;
-  bottom: 0;
+  bottom: -4px;
   text-align: center;
   display: flex;
   justify-content: space-around;

@@ -7,7 +7,7 @@ import ConsultPage from "./components/ConsultPage";
 const MyContext = createContext();
 
 function App() {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(" ");
   return (
     <BrowserRouter>
       <MyContext.Provider value={{ value, setValue }}>

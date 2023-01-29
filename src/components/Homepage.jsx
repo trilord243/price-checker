@@ -1,11 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { MyContext } from "../App";
 import "./Hompage.css";
 import logo from "./Logoplaza.png";
 import Footer from "./Footer";
+import EB from "../api/ebapi-modules";
 function Homepage() {
+  console.log(EB);
+  const inputRef = useRef(null);
+  useEffect(() => {
+    inputRef.current.focus();
+    inputRef.current.addEventListener("blur", (event) => {
+      event.preventDefault();
+      inputRef.current.focus();
+    });
+  }, []);
+
   const { value, setValue } = useContext(MyContext);
 
   const handleChange = (event) => {
@@ -14,9 +25,7 @@ function Homepage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(value);
   };
-  console.log(value);
 
   return (
     <>
@@ -24,11 +33,13 @@ function Homepage() {
         <form onSubmit={handleSubmit} className="search-form">
           <div className="center">
             <input
+              autoFocus
               type="text"
               onChange={handleChange}
               value={value}
               className="center"
               placeholder=""
+              ref={inputRef}
             />
           </div>
           <div className="center">
