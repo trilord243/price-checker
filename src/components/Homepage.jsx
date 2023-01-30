@@ -5,9 +5,9 @@ import { MyContext } from "../App";
 import "./Hompage.css";
 import logo from "./Logoplaza.png";
 import Footer from "./Footer";
-import EB from "../api/ebapi-modules";
+
 function Homepage() {
-  console.log(EB);
+
   const inputRef = useRef(null);
   useEffect(() => {
     inputRef.current.focus();
