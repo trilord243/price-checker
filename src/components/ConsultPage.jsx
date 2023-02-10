@@ -10,7 +10,7 @@ function ConsultPage() {
     setTimeout(() => {
       navigate("/");
       setValue("");
-    }, 5000);
+    }, 6000);
   }, []);
 
   return (

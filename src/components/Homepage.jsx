@@ -5,8 +5,21 @@ import { MyContext } from "../App";
 import "./Hompage.css";
 import logo from "./Logoplaza.png";
 import Footer from "./Footer";
+import axios from "axios";
+
 
 function Homepage() {
+
+  /*   useEffect(() => {
+      axios
+        .get("https://app.elplazas.com/api/v1/exchangeRate")
+        .then((response) => console.log(response.data)).catch((error) => console.log(error));
+  
+  
+    }, []); */
+
+
+
 
   const inputRef = useRef(null);
   useEffect(() => {
