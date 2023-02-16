@@ -6,18 +6,16 @@ import "./Hompage.css";
 import logo from "./Logoplaza.png";
 import Footer from "./Footer";
 import axios from "axios";
+import HeroTemplate from "./Hero";
 
+import imagen2 from "../assets/Promo2.png"
+import imagen1 from "../assets/Promo1.png"
+import imagen3 from "../assets/Promo3.png"
 
 function Homepage() {
-
-  /*   useEffect(() => {
-      axios
-        .get("https://app.elplazas.com/api/v1/exchangeRate")
-        .then((response) => console.log(response.data)).catch((error) => console.log(error));
-  
-  
-    }, []); */
-
+  const images = [
+    imagen1, imagen2, imagen3
+  ]
 
 
 
@@ -42,6 +40,16 @@ function Homepage() {
 
   return (
     <>
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh'
+      }}>
+
+
+        <HeroTemplate images={images} intervalTime={3000} ></HeroTemplate>
+      </div>
       <div className="form-f">
         <form onSubmit={handleSubmit} className="search-form">
           <div className="center">
@@ -64,9 +72,9 @@ function Homepage() {
       </div>
 
       <div className="container bg-container">
-        <div className="logo">
+        {/*  <div className="logo">
           <img src={logo} alt="iamge" />
-        </div>
+        </div> */}
       </div>
       <div className="footer">
         <Footer />

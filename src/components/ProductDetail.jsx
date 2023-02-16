@@ -15,7 +15,8 @@ function ProductDetail({ value = "" }) {
 
   }, [value]);
 
-  const Iva = product.price * 0.15
+  const Iva = Math.round(((product.price * 0.15) * 1000)) / 1000
+
 
 
 
@@ -28,7 +29,7 @@ function ProductDetail({ value = "" }) {
 
       <p className="product-price"> {loading && product.unit ? product.unit : ""}</p>
       <p className="product-price"  > {loading && !(product.unit == undefined) ? `Precio: ${product.price}Bs` : ""} </p>
-      <p className="product-price"> {loading && !(product.unit == undefined) ? `IVA: ${Iva}Bs ` : ""}</p>
+      <p className="product-price"> {loading && !(product.unit == undefined) ? `IVA: ${Iva.toFixed(2)}Bs ` : ""}</p>
       <p className="product-price-total"> {loading && !(product.unit == undefined) ? `Precio total: ${Number(product.price) + Number(Iva)}Bs ` : ""}</p>
 
 
