@@ -11,8 +11,16 @@ function OptionsPage() {
     };
 
     const handleOptionClick = (option) => {
-        console.log("Opción seleccionada:", option);
-        // Implementa la lógica de navegación o acción aquí, basada en la opción seleccionada
+        switch (option) {
+            case "chat":
+                navigate("/localChat");
+                break;
+            case "config":
+
+                break;
+            default:
+                break;
+        }
     };
 
     return (

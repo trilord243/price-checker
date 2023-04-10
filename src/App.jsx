@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./components/Homepage";
 import ConsultPage from "./components/ConsultPage";
 import OptionsPage from "./components/OptionsPage";
+import LocalChat from "./components/LocalChat";
 const MyContext = createContext();
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
 
           <Route path="/Consult" element={<ConsultPage />} />
           <Route path="/options" element={<OptionsPage />} />
+          <Route path="/localChat" element={<LocalChat />} />
         </Routes>
       </MyContext.Provider>
     </BrowserRouter>
