@@ -1,0 +1,38 @@
+/* OptionsPage.css */
+.options-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 100vh;
+}
+
+.option-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.option-card:hover {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  transform: translateY(-10px);
+}
+
+.option-card h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0b6138;
+  margin-bottom: 10px;
+  text-align: center;
+}

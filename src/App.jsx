@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./components/Homepage";
 import ConsultPage from "./components/ConsultPage";
-
+import OptionsPage from "./components/OptionsPage";
 const MyContext = createContext();
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
 
           <Route path="/Consult" element={<ConsultPage />} />
+          <Route path="/options" element={<OptionsPage />} />
         </Routes>
       </MyContext.Provider>
     </BrowserRouter>

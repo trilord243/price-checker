@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { MyContext } from "../App";
 import "./Hompage.css";
@@ -13,6 +13,8 @@ import imagen1 from "../assets/Promo1.png"
 import imagen3 from "../assets/Promo3.png"
 
 function Homepage() {
+  const [showOptions, setShowOptions] = useState(false);
+  const navigate = useNavigate();
   const images = [
     imagen1, imagen2, imagen3
   ]
@@ -36,8 +38,12 @@ function Homepage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (value === "1234567") {
+      navigate("/options");
+    } else {
+      navigate("/Consult");
+    }
   };
-
   return (
     <>
       <div style={{
@@ -64,17 +70,15 @@ function Homepage() {
             />
           </div>
           <div className="center">
-            <Link to="/Consult">
-              <button type="submit">Submit</button>
-            </Link>
+
+            <button type="submit">Submit</button>
+
           </div>
         </form>
       </div>
 
       <div className="container bg-container">
-        {/*  <div className="logo">
-          <img src={logo} alt="iamge" />
-        </div> */}
+
       </div>
       <div className="footer">
         <Footer />
